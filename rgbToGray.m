@@ -1,4 +1,4 @@
-function [B] = rgbToGray(I , method , channel)
+function [B] = RGBtoGray(I , method , channel)
    
     I = double(I);
 
@@ -42,5 +42,5 @@ function [B] = rgbToGray(I , method , channel)
     
     % Convert the result to uint8 for display
     B = uint8(B);
-    figure, imshow(B);
+    %figure, imshow(B);
 end

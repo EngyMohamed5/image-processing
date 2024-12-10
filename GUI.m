@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 10-Dec-2024 18:59:39
+% Last Modified by GUIDE v2.5 10-Dec-2024 20:05:03
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -78,7 +78,10 @@ function pushbutton13_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton13 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img = getimage(handles.axes1);
+b=contrastStretching(img,0,50);
+axes(handles.axes3);
+imshow(b);
 
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
@@ -92,21 +95,30 @@ function pushbutton9_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img = getimage(handles.axes1);
+b=RGBtoGray(img,'average');
+axes(handles.axes3);
+imshow(b);
 
 % --- Executes on button press in pushbutton12.
 function pushbutton12_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton12 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img = getimage(handles.axes1);
+b=rgbToBinary(img);
+axes(handles.axes3);
+imshow(b);
 
 % --- Executes on button press in pushbutton14.
 function pushbutton14_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton14 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img = getimage(handles.axes1);
+b=grayToBinary(img,128);
+axes(handles.axes3);
+imshow(b);
 
 % --- Executes on button press in pushbutton15.
 function pushbutton15_Callback(hObject, eventdata, handles)
@@ -346,3 +358,30 @@ function pushbutton67_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton67 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton71.
+function pushbutton71_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton71 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+[fileName, filePath] = uigetfile({'*.jpg;*.png;*.bmp;*.tif', 'Image Files (*.jpg, *.png, *.bmp, *.tif)'}, ...
+                                     'Select an Image');
+    % Check if the user canceled the selection
+    if isequal(fileName, 0)
+        disp('No file selected');
+        return;
+    end
+    
+    % Construct the full file path
+    fullFileName = fullfile(filePath, fileName);
+    
+    % Read the image
+    img = imread(fullFileName);
+    
+    % Display the image in the axes
+    axes(handles.axes1);  % Replace 'axes1' with the tag of your GUI's axes
+    imshow(img);
+    
+    % Update the handles structure (if required in your GUI)
+    guidata(hObject, handles);

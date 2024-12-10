@@ -27,5 +27,5 @@ function [B] = brightness(I, operation, value)
     end
     
     B = uint8(B);
-    figure, imshow(B);
+   % figure, imshow(B);
 end

@@ -12,5 +12,5 @@ function [binaryImage] = grayToBinary(grayImage,threshold)
         end
     end
 
-figure , imshow(binaryImage);
+%figure , imshow(binaryImage);
 end
