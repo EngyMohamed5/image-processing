@@ -125,15 +125,27 @@ function pushbutton15_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton15 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img = getimage(handles.axes1);
+b=complement(img);
+axes(handles.axes3);
+imshow(b);
 
 % --- Executes on button press in pushbutton16.
 function pushbutton16_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton16 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-
+  img = getimage(handles.axes1);
+    
+    % Call histogram function to get the histogram data
+    hist_data = histogram(img);
+    
+    % Plot the histogram on the appropriate axes (axes3)
+    axes(handles.axes3);  % Make axes3 the current axes
+    bar(0:255, hist_data);  % Plot the histogram
+    title('Histogram of Grayscale Image');
+    xlabel('Pixel Intensity');
+    ylabel('Frequency');
 
 function edit1_Callback(hObject, eventdata, handles)
 % hObject    handle to edit1 (see GCBO)
