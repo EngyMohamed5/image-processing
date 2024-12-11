@@ -102,7 +102,7 @@ function pushbutton9_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 img = getimage(handles.axes1);
-b=RGBtoGray(img,'average');
+b=rgbToGray(img,'average');
 axes(handles.axes3);
 imshow(b);
 
