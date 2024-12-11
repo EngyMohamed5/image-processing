@@ -24,5 +24,5 @@ function edge_image = verticalSharping(image)
     
     % Convert the result back to uint8
     edge_image = uint8(edge_image);
-     figure,imshow(edge_image);
+    % figure,imshow(edge_image);
 end

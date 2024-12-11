@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-function [B] = RGBtoGray(I , method , channel)
-=======
 function [B] = rgbToGray(I , method , channel)
->>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
    
     I = double(I);
 

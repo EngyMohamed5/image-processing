@@ -23,7 +23,7 @@ function varargout = GUI(varargin)
 % Edit the above text to modify the response to help GUI
 
 
-% Last Modified by GUIDE v2.5 11-Dec-2024 15:12:13
+% Last Modified by GUIDE v2.5 11-Dec-2024 13:11:26
 
 
 % Begin initialization code - DO NOT EDIT
@@ -81,7 +81,7 @@ function pushbutton13_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 img = getimage(handles.axes1);
-
+b =contrastStretching(img,0,50);
 min=str2double(get(handles.edit3,'String'));
 max=str2double(get(handles.edit4,'String'));
 b=contrastStretching(img,min,max);
@@ -518,7 +518,7 @@ end
     guidata(hObject, handles);
 
 
-
+<<<<<<< HEAD
 % --- Executes on button press in point.
 function point_Callback(hObject, eventdata, handles)
  handles.FunctionToRun = @pointEdgeDetection;
@@ -790,7 +790,7 @@ handles.FunctionToRun = @Gaussian_High_Pass_Filter;
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of radiobutton106
-
+=======
 
 function edit2_Callback(hObject, eventdata, handles)
 % hObject    handle to edit2 (see GCBO)
@@ -839,29 +839,6 @@ end
 
 
 function edit4_Callback(hObject, eventdata, handles)
-% hObject    handle to edit3 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edit3 as text
-%        str2double(get(hObject,'String')) returns contents of edit3 as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function edit4_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit3 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-function edit5_Callback(hObject, eventdata, handles)
 % hObject    handle to edit4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -871,7 +848,7 @@ function edit5_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function edit5_CreateFcn(hObject, eventdata, handles)
+function edit4_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to edit4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -881,3 +858,4 @@ function edit5_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
