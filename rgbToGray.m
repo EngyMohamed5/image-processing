@@ -1,4 +1,4 @@
-function [B] = RGBtoGray(I , method , channel)
+function [B] = rgbToGray(I , method , channel)
    
     I = double(I);
 
