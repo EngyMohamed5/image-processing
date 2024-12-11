@@ -22,7 +22,11 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
+<<<<<<< HEAD
 % Last Modified by GUIDE v2.5 11-Dec-2024 02:51:38
+=======
+% Last Modified by GUIDE v2.5 11-Dec-2024 13:11:26
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -79,7 +83,13 @@ function pushbutton13_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 img = getimage(handles.axes1);
+<<<<<<< HEAD
 b=contrastStretching(img,0,50);
+=======
+min=str2double(get(handles.edit3,'String'));
+max=str2double(get(handles.edit4,'String'));
+b=contrastStretching(img,min,max);
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 axes(handles.axes3);
 imshow(b);
 
@@ -88,7 +98,15 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+<<<<<<< HEAD
 
+=======
+img = getimage(handles.axes1);
+value=str2double(get(handles.edit1,'String'));
+b=brightness(img, 'add', value);
+axes(handles.axes3);
+imshow(b);
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 
 % --- Executes on button press in pushbutton9.
 function pushbutton9_Callback(hObject, eventdata, handles)
@@ -96,7 +114,11 @@ function pushbutton9_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 img = getimage(handles.axes1);
+<<<<<<< HEAD
 b=RGBtoGray(img,'average');
+=======
+b=rgbToGray(img,'average');
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 axes(handles.axes3);
 imshow(b);
 
@@ -116,7 +138,12 @@ function pushbutton14_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 img = getimage(handles.axes1);
+<<<<<<< HEAD
 b=grayToBinary(img,128);
+=======
+thre=str2double(get(handles.edit2,'String'));
+b=grayToBinary(img,thre);
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 axes(handles.axes3);
 imshow(b);
 
@@ -125,15 +152,36 @@ function pushbutton15_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton15 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+<<<<<<< HEAD
 
+=======
+img = getimage(handles.axes1);
+b=complement(img);
+axes(handles.axes3);
+imshow(b);
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 
 % --- Executes on button press in pushbutton16.
 function pushbutton16_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton16 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+<<<<<<< HEAD
 
 
+=======
+  img = getimage(handles.axes1);
+    
+    % Call histogram function to get the histogram data
+    hist_data = histogram(img);
+    
+    % Plot the histogram on the appropriate axes (axes3)
+    axes(handles.axes3);  % Make axes3 the current axes
+    bar(0:255, hist_data);  % Plot the histogram
+    title('Histogram of Grayscale Image');
+    xlabel('Pixel Intensity');
+    ylabel('Frequency');
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 
 function edit1_Callback(hObject, eventdata, handles)
 % hObject    handle to edit1 (see GCBO)
@@ -162,21 +210,45 @@ function pushbutton25_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton25 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+<<<<<<< HEAD
 
+=======
+img = getimage(handles.axes1);
+value=str2double(get(handles.edit1,'String'));
+b=brightness(img, 'subtract', value);
+axes(handles.axes3);
+imshow(b);
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 
 % --- Executes on button press in pushbutton26.
 function pushbutton26_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton26 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+<<<<<<< HEAD
 
+=======
+img = getimage(handles.axes1);
+value=str2double(get(handles.edit1,'String'));
+b=brightness(img, 'divide', value);
+axes(handles.axes3);
+imshow(b);
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 
 % --- Executes on button press in pushbutton24.
 function pushbutton24_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton24 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+<<<<<<< HEAD
 
+=======
+img = getimage(handles.axes1);
+value=str2double(get(handles.edit1,'String'));
+b=brightness(img, 'multiply', value);
+axes(handles.axes3);
+imshow(b);
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 
 % --- Executes on button press in pushbutton46.
 function pushbutton46_Callback(hObject, eventdata, handles)
@@ -292,6 +364,7 @@ function pushbutton42_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in pushbutton70.
 function pushbutton70_Callback(hObject, eventdata, handles)
+<<<<<<< HEAD
  if isfield(handles, 'OriginalImage') && ~isempty(handles.OriginalImage)
         % Check if the FunctionToRun is set
         if isfield(handles, 'FunctionToRun') && ~isempty(handles.FunctionToRun)
@@ -314,6 +387,8 @@ function pushbutton70_Callback(hObject, eventdata, handles)
         % Display error if no image is loaded
         msgbox('Please load an image first!', 'Error', 'error');
     end
+=======
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 % hObject    handle to pushbutton70 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -361,6 +436,7 @@ function pushbutton66_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
+<<<<<<< HEAD
 % --- Executes on button press in applyedge.
 function applyedge_Callback(hObject, eventdata, handles)
      if isfield(handles, 'OriginalImage') && ~isempty(handles.OriginalImage)
@@ -388,6 +464,11 @@ function applyedge_Callback(hObject, eventdata, handles)
 
     
 % hObject    handle to applyedge (see GCBO)
+=======
+% --- Executes on button press in pushbutton65.
+function pushbutton65_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton65 (see GCBO)
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
@@ -401,6 +482,7 @@ function pushbutton68_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in pushbutton67.
 function pushbutton67_Callback(hObject, eventdata, handles)
+<<<<<<< HEAD
       if isfield(handles, 'OriginalImage') && ~isempty(handles.OriginalImage)
         % Check if the FunctionToRun is set
         if isfield(handles, 'FunctionToRun') && ~isempty(handles.FunctionToRun)
@@ -424,6 +506,8 @@ function pushbutton67_Callback(hObject, eventdata, handles)
         msgbox('Please load an image first!', 'Error', 'error');
     end
 
+=======
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
 % hObject    handle to pushbutton67 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -434,6 +518,7 @@ function pushbutton71_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton71 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+<<<<<<< HEAD
 [fileName, filePath] = uigetfile({'*.jpg;*.png;*.bmp;*.tif', 'Image Files (*.jpg, *.png, *.bmp, *.tif)'}, ...
                                      'Select an Image');
     % Check if the user canceled the selection
@@ -441,6 +526,16 @@ function pushbutton71_Callback(hObject, eventdata, handles)
         disp('No file selected');
         return;
     end
+=======
+[fileName, filePath] = uigetfile({'*.jpg;*.jpeg;*.png;*.bmp;*.tif', 'Image Files (*.jpg, *.jpeg, *.png, *.bmp, *.tif)'}, ...
+                                     'Select an Image');
+% Check if the user canceled the selection
+if isequal(fileName, 0)
+    disp('No file selected');
+    return;
+end
+
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
     
     % Construct the full file path
     fullFileName = fullfile(filePath, fileName);
@@ -451,12 +546,16 @@ function pushbutton71_Callback(hObject, eventdata, handles)
     % Display the image in the axes
     axes(handles.axes1);  % Replace 'axes1' with the tag of your GUI's axes
     imshow(img);
+<<<<<<< HEAD
     handles.OriginalImage=img;
+=======
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
     
     % Update the handles structure (if required in your GUI)
     guidata(hObject, handles);
 
 
+<<<<<<< HEAD
 % --- Executes on button press in point.
 function point_Callback(hObject, eventdata, handles)
  handles.FunctionToRun = @pointEdgeDetection;
@@ -728,3 +827,72 @@ handles.FunctionToRun = @Gaussian_High_Pass_Filter;
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of radiobutton106
+=======
+
+function edit2_Callback(hObject, eventdata, handles)
+% hObject    handle to edit2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit2 as text
+%        str2double(get(hObject,'String')) returns contents of edit2 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit3_Callback(hObject, eventdata, handles)
+% hObject    handle to edit3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit3 as text
+%        str2double(get(hObject,'String')) returns contents of edit3 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit4_Callback(hObject, eventdata, handles)
+% hObject    handle to edit4 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit4 as text
+%        str2double(get(hObject,'String')) returns contents of edit4 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit4_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit4 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+>>>>>>> 4443b0ba3204e256ffd9370e316998525e98c184
