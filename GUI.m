@@ -377,13 +377,14 @@ function pushbutton71_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton71 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-[fileName, filePath] = uigetfile({'*.jpg;*.png;*.bmp;*.tif', 'Image Files (*.jpg, *.png, *.bmp, *.tif)'}, ...
+[fileName, filePath] = uigetfile({'*.jpg;*.jpeg;*.png;*.bmp;*.tif', 'Image Files (*.jpg, *.jpeg, *.png, *.bmp, *.tif)'}, ...
                                      'Select an Image');
-    % Check if the user canceled the selection
-    if isequal(fileName, 0)
-        disp('No file selected');
-        return;
-    end
+% Check if the user canceled the selection
+if isequal(fileName, 0)
+    disp('No file selected');
+    return;
+end
+
     
     % Construct the full file path
     fullFileName = fullfile(filePath, fileName);
