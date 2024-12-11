@@ -1,5 +1,9 @@
 function [B] = brightness(I, operation, value)
-    I = double(I);
+      if size(I, 3) == 3
+        I = rgb2gray(I);
+    end
+I = double(I);
+  
     
     [w, h] = size(I);
     B = zeros(w, h);
